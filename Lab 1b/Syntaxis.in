@@ -1,0 +1,40 @@
+program ::= "programa" decllist ";" cmpdstmt "finprograma"
+
+decllist ::= declaration | declaration ";" decllist
+declaration ::= "variable" type IDENTIFIER
+
+type1 ::= "entero" | "doble" | "booleano" | "char"
+arraydec1 ::= type1 IDENTIFIER "[" nr "]"
+type  ::= type1 | arraydec1
+
+cmpdstmt ::= "{" stmtlist "}"
+
+stmtlist ::= stmt | stmt ";" stmtlist
+stmt ::= simplstmt | structstmt
+
+simplstmt ::= assignstmt | iostmt
+
+assignstmt ::= identifier "=" expression
+
+expression ::= expression symbol term | term
+
+
+
+symbol ::= "+" | "-" | "*" | "/" | "%"
+term ::= term symbol factor | factor
+factor ::= "(" expression ")" | identifier 
+
+
+iostmt ::= "leer" type IDENTIFIER | "imprime" IDENTIFIER
+
+
+
+structstmt ::= cmpdstmt | ifstmt | forstmt
+ifstmt ::= "fi" condition "entonces" stmtlist "fiend" ["filse" condition "entonces" stmtlist "fiend"]
+forstmt ::= "iniciobucle" IDENTIFIER "desde" IDENTIFIER "hasta" IDENTIFIER stmtlist "finbucle"
+
+
+condition ::= "(" expression RELATION expression ")"
+relation ::= "<" | "<=" | "==" | ">=" | ">"
+operation ::= "and" | "or"
+

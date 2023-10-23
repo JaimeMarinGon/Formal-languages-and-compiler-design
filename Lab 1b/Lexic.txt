@@ -1,0 +1,30 @@
+Alphabet:
+
+a. Upper (A-Z) and lower (a-z) case letters of the English alphabet
+b. Underline character '_'
+c. Digits (0-9)
+
+Lexic:
+
+a. Special symbols
+	Operators + - * / % <= < == >= > = += -= and or
+	Serparators ( ) [ ] { } : ; space
+	Reserved words 
+		programa finprograma listo leer variable entero doble booleano char fi 
+		filse lse fiend entonces iniciobucle finbucle desde hasta imprime devolver romper
+
+b. Identifiers
+  -a sequence of letters and digits, such that the first character is a letter; the rule is
+	letter ::= "A" | "B" | ... | "Z" | "a" | "b" | ... | "z"
+	digit ::= "0" | "1" | ... | "9"
+	identifier ::= letter | letter{letter}{digit}
+
+c. Constants
+  -1 Integer:
+	integer ::= ["-" | "+"] Non-zero-digit {digit} 
+
+  -2 Character
+	character ::= "letter" | "digit" 
+
+  -3 String
+	string ::= character{string}
